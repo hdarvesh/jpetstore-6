@@ -54,6 +54,11 @@
       <name>Mybatis GitHub Pages</name>
       <url>git:ssh://git@github.com/mybatis/jpetstore-6.git?gh-pages#</url>
     </site>
+         <repository>
+                <id>Release</id>
+                <name>jpetrepo</name>
+                <url>http://23.96.121.78:8081/repository/jpetrepo/</url>
+         </repository>
   </distributionManagement>
 
   <dependencies>
@@ -277,6 +282,7 @@
         <enabled>true</enabled>
       </snapshots>
     </repository>
+         
   </repositories>
 
   <pluginRepositories>
