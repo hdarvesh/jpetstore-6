@@ -432,9 +432,6 @@
       </properties>
     </profile>
   </profiles>
-       <distrobutionManagement>
-              <name>jpetrepo</name>
-              <url>http://23.96.121.78:8081/repository/jpetrepo/</url>
-              </distrobutionManagement>
+      
 
 </project>
