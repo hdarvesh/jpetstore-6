@@ -25,6 +25,7 @@ pipeline {
         {
             steps {
            nexusArtifactUploader artifacts: [[artifactId: 'jpetstore', classifier: '', file: '/var/lib/jenkins/workspace/nexus/target/jpetstore.war', type: 'war']], credentialsId: 'cef7707f-15e0-4865-8aa2-eb090a4c4c9e', groupId: 'org.mybatis', nexusUrl: '23.96.121.78:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'shaheenrepo', version: '6.0.3-SNAPSHOT'
+		} 
         }
     }
 }
