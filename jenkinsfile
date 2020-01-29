@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+    stages{
+        stage('Compile') {
+            steps {
+               git url: 'https://github.com/hdarvesh/jpetstore-6.git'
+               sh 'mvn compile'
+              }
+        }
+		stage("build & SonarQube analysis") 
+		{
+		steps {
+              withSonarQubeEnv('sonarqube') {
+                sh 'mvn clean package sonar:sonar'
+              }
+            }
+	    }
+        stage('Test') {
+           steps {
+               sh 'mvn test'
+               junit 'target/surefire-reports/*.xml'
+           } 
+        }
+        stage('Publish') 
+        {
+            steps {
+        nexusArtifactUploader artifacts: [[artifactId: 'jpetstore', classifier: '', file: '/var/lib/jenkins/workspace/project pipeline/target/jpetstore.war', type: 'war']], credentialsId: '30db4f0f-5349-4ea5-bf41-bb079e462ed2', groupId: 'org.mybatis', nexusUrl: '23.96.121.78:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'NewJpetRepo', version: '6.1'
+         } 
+        }
+    }
+}
