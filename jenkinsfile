@@ -24,7 +24,7 @@ pipeline {
         stage('Publish') 
         {
             steps {
-        nexusArtifactUploader artifacts: [[artifactId: 'jpetstore', classifier: '', file: '/var/lib/jenkins/workspace/project pipeline/target/jpetstore.war', type: 'war']], credentialsId: '30db4f0f-5349-4ea5-bf41-bb079e462ed2', groupId: 'org.mybatis', nexusUrl: '23.96.121.78:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'NewJpetRepo', version: '6.1'
+        nexusPublisher nexusInstanceId: '12345', nexusRepositoryId: 'NewJpetRepo', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '/var/lib/jenkins/workspace/project pipeline/target/jpetstore.war']], mavenCoordinate: [artifactId: 'jpetstore', groupId: 'org.mybatis', packaging: 'war', version: '9.2']]]
          } 
         }
     }
