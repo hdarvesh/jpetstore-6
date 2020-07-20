@@ -55,9 +55,8 @@
       <url>git:ssh://git@github.com/mybatis/jpetstore-6.git?gh-pages#</url>
     </site>
          <repository>
-                <id>Release</id>
-                <name>jpetrepo</name>
-                <url>http://23.96.121.78:8081/repository/jpetrepo/</url>
+                <id>shaheenrepo</id>
+                <url>http://40.78.150.212:8081/repository/shaheenrepo/</url>
          </repository>
   </distributionManagement>
 
@@ -204,6 +203,19 @@
           <version>3.0.0-M4</version>
         </plugin>
         <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>2.7</version>
+          <executions>
+           <execution>
+             <id>default-deploy</id>
+             <phase>deploy</phase>
+             <goals>
+               <goal>deploy</goal>
+             </goals>
+           </execution>
+          </executions>
+        </plugin>
+        <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
           <configuration>
@@ -258,6 +270,10 @@
             </goals>
           </execution>
         </executions>
+      </plugin>     
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-deploy-plugin</artifactId>
       </plugin>
       <plugin>
         <artifactId>maven-failsafe-plugin</artifactId>
