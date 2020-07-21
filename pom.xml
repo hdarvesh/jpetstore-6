@@ -54,10 +54,10 @@
       <name>Mybatis GitHub Pages</name>
       <url>git:ssh://git@github.com/mybatis/jpetstore-6.git?gh-pages#</url>
     </site>
-    <snapshotRepository>
+    <repository>
       <id>shaheenrepo</id>
       <url>http://40.78.150.212:8081/repository/shaheenrepo/</url>
-   </snapshotRepository>
+   <repository>
   </distributionManagement>
   <dependencies>
     <dependency>
