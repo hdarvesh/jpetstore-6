@@ -57,7 +57,7 @@
     <repository>
       <id>shaheenrepo</id>
       <url>http://40.78.150.212:8081/repository/shaheenrepo/</url>
-   <repository>
+   </repository>
   </distributionManagement>
   <dependencies>
     <dependency>
