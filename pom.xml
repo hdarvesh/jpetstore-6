@@ -55,7 +55,7 @@
       <url>git:ssh://git@github.com/mybatis/jpetstore-6.git?gh-pages#</url>
     </site>
     <repository>
-      <id>shaheenrepo</id>
+      <id>12345</id>
       <name>shaheenrepo</name>
       <url>http://40.78.150.212:8081/repository/shaheenrepo/</url>
    </repository>
