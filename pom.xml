@@ -219,14 +219,6 @@
           <version>3.0.0-M4</version>
         </plugin>
         <plugin>
-         <groupId>org.apache.maven.plugins</groupId>
-         <artifactId>maven-deploy-plugin</artifactId>
-         <version>${maven-deploy-plugin.version}</version>
-         <configuration>
-            <skip>true</skip>
-         </configuration>
-        </plugin>
-        <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
           <configuration>
@@ -296,6 +288,16 @@
             </goals>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+       <groupId>org.sonatype.plugins</groupId>
+       <artifactId>nexus-staging-maven-plugin</artifactId>
+       <version>1.6.6</version>
+       <extensions>true</extensions>
+       <configuration>
+        <serverId>nexus</serverId>
+        <nexusUrl>http://40.78.150.212:8081/</nexusUrl>
+       </configuration>
       </plugin>
     </plugins>
   </build>
